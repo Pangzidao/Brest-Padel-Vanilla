@@ -32,6 +32,7 @@ body {
   footer {
     flex-shrink: 0;
     background-color: #246c93;
+    color:white
     display: flex;
     justify-content: center;
     img{
@@ -63,6 +64,8 @@ header{
         width:150px;
         display: flex;
         justify-content: center;
+        margin-left: -120px;
+        transition: margin-left 0.2s ease-in-out;
         img{
             height:100%;
         }
@@ -97,6 +100,28 @@ main{
     justify-content: center;
     align-items: center;
 
+    #booking-button{
+        position: fixed;
+        z-index: 2;
+        bottom: 100px;
+        right:100px;
+        width:150px;
+        height: 70px;
+        font-size: 24px;
+        color: white;
+        font-family: "RobotoBold";
+        background-color: $blue;
+        border: solid 5px $green;
+
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+
+    
+
+
+
     div{
 
         padding-top: 120px;
@@ -104,24 +129,56 @@ main{
         display: flex;
         justify-content: center;
 
+        #accueil{
+            color: $blue;
+            background-image: url("./images/icon-background.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size:70%;
+
+            p{
+                font-size: 32px;
+                font-family: "RobotoBold";
+            }
+        }
+
+        #actualites{
+            border: solid;
+            color: $darkblue;
+
+            .news{
+                border: solid 5px $blue;
+                width: 28%;
+                height: 100%;
+                margin: 10px;
+                color: $white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: $lightblue;
+            }
+        }
+
+      
+
         section{
             margin-bottom: 50px;
-            padding-top: 120px;
-            padding-bottom: 120px;
-            width: 80%;
+            padding-top: 320px;
+            padding-bottom: 200px;
             height: 360px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color:#246c93;
-            border: solid #246c93 10px;
-            border-radius: 10px;
+            width: 100%;
+            color: $white;
+            
             h1{
                 text-align: center;
                 width: 60%;
-                font-size: 40px;
+                font-size: 48px;
                 font-family: "RobotoBold";
+                color:$darkblue
             }
             p{
                 text-align: center;
@@ -149,15 +206,26 @@ main{
 
         height: 100vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
 
-    footer{
-        position:ab;
-        bottom: 0px;
+        h2{
+            color: $white;
+            font-size: 48px;
+            font-style: italic;
+        }
+
+
     }
-    
 
 }
+
+
+
+
+
+
+
+
 

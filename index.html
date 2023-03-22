@@ -9,7 +9,7 @@
 </head>
 <body>
     <header id="header">
-        <a href="#"><img id="header-logo" src="./images/new-logo-brest-padel.png"></a>
+        <a href="#" id="header-logo"><img  src="./images/new-logo-brest-padel.png"></a>
         <nav id="header-nav">
             <ul>
                 <li class="header-nav-link"><a href="#accueil">Accueil</a></li>
@@ -23,11 +23,12 @@
         </nav>
     </header>
     <main>
+        <button id = "booking-button" type="button">Je réserve</button>
         <section id="hero">
             <img src="./images/new-logo-brest-padel.png" width="400px">
         </section>
-        <div id="accueil">
-            <section>
+        <div >
+            <section id="accueil">
                 <h1>Brest Padel</h1>
                 <p>Venez jouer au padel à Brest.</p>
                 <p>Nous proposons trois terrains dernier cri de 2v2 et 
@@ -43,35 +44,39 @@
             </section>
         </div>
         
-        <div id="actualites">
-            <section >
-                <h2>Actualités</h1>
+        <div >
+            <section id="actualites">
+                <button id="news-left-button">left</button>
+                <button id="news-right-button">right</button>
+                <h2>Actualités</h2>
+                <div id="section-actualites"></div>
             </section>
         </div>
         <div id="lecomplexe">
             <section>
-                <h2>Le complexe</h1>
+                <h2>Le complexe</h2>
             </section>
         </div>
         <div id="lepadel">
             <section>
-                <h2>Le Padel</h1>
+                <h2>Le Padel</h2>
             </section>
         </div>
         <div id="contact">
             <section>
-                <h2>Contact</h1>
+                <h2>Contact</h2>
             </section>
         </div>
         <div id="acces">
             <section>
-                <h2>Accés</h1>
+                <h2>Accés</h2>
             </section> 
         </div> 
     </main>
     <footer>
         <img src="./images/new-logo-brest-padel.png">
+        <a href="admin.html">administrateur</a>
     </footer>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
