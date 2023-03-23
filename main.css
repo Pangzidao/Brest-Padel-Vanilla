@@ -10,9 +10,98 @@
   font-weight: normal;
   font-style: normal;
 }
-body {
+* {
+  margin: 0;
+}
+
+html {
+  font-family: "Roboto";
+  font-size: 16px;
+}
+html a {
+  text-decoration: none;
+}
+html body {
   display: flex;
   flex-direction: column;
+}
+html header {
+  position: fixed;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out;
+}
+@media (max-width: 768px) {
+  html header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+html header #header-logo {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  margin-left: -240px;
+  transition: margin-left 0.2s ease-in-out;
+}
+html header #header-logo img {
+  height: 100%;
+}
+html header #header-nav {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+html header #header-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+@media (max-width: 768px) {
+  html header #header-nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 8%;
+  }
+}
+html header #header-nav ul li {
+  margin: 2%;
+}
+html header #header-nav ul li a {
+  color: white;
+  font-size: calc(1rem + 0.5vw);
+}
+@media (max-width: 768px) {
+  html header .header-nav-no-display {
+    display: none;
+  }
+}
+html header #header-menu-icon {
+  display: none;
+}
+@media (max-width: 768px) {
+  html header #header-menu-icon {
+    display: flex;
+    width: 8%;
+    color: white;
+    font-size: calc(1rem + 2vw);
+    margin: 6%;
+  }
+}
+html #blue-header {
+  background-color: #8dc5d5;
+}
+html #blue-header #header-logo {
+  margin-left: 4%;
+}
+html #transparent-header {
+  background-color: transparent;
 }
 
 main {
@@ -22,59 +111,12 @@ main {
 footer {
   flex-shrink: 0;
   background-color: #246c93;
+  color: white;
   display: flex;
   justify-content: center;
 }
 footer img {
   width: 100px;
-}
-
-* {
-  margin: 0;
-  font-family: "Roboto";
-}
-
-a {
-  text-decoration: none;
-}
-
-header {
-  position: fixed;
-  width: 100%;
-  height: 120px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.2s ease-in-out;
-  transition: height 0.2s ease-in-out;
-}
-header a {
-  height: 100%;
-  width: 150px;
-  display: flex;
-  justify-content: center;
-  margin-left: -120px;
-  transition: margin-left 0.2s ease-in-out;
-}
-header a img {
-  height: 100%;
-}
-header #header-nav {
-  flex-grow: 2;
-  justify-content: center;
-  align-items: center;
-}
-header #header-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-}
-header #header-nav ul li {
-  margin: 2%;
-  font-size: 24px;
-}
-header #header-nav ul li a {
-  color: white;
 }
 
 main {
@@ -88,11 +130,11 @@ main {
 main #booking-button {
   position: fixed;
   z-index: 2;
-  bottom: 100px;
-  right: 100px;
-  width: 150px;
-  height: 70px;
-  font-size: 24px;
+  bottom: 50px;
+  right: 50px;
+  width: 120px;
+  height: 50px;
+  font-size: calc(1rem + 0.5vh);
   color: white;
   font-family: "RobotoBold";
   background-color: #0667a9;
@@ -115,7 +157,7 @@ main div #accueil {
   background-size: 70%;
 }
 main div #accueil p {
-  font-size: 32px;
+  font-size: calc(1rem + 1vh);
   font-family: "RobotoBold";
 }
 main div #actualites {
@@ -173,9 +215,4 @@ main #hero {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-main #hero h2 {
-  color: #ffeeff;
-  font-size: 48px;
-  font-style: italic;
 }/*# sourceMappingURL=main.css.map */

@@ -2,14 +2,6 @@ console.log("hello")
 
 import {events} from "./data.js"
 
-const colors = {
-    "white": "#fff",
-    "green": "#b9dbb4",
-    "lightblue": "#8dc5d5",
-    "blue": "#0667a9",
-    "darkblue": "#246c93"
-}
-
 const header = document.getElementById("header")
 const headerLogo = document.getElementById("header-logo")
 const headerLinks = document.querySelectorAll('header nav a')
@@ -17,34 +9,84 @@ const sectionActualites = document.getElementById("section-actualites")
 const news = document.querySelectorAll("news")
 const leftButton = document.getElementById("news-left-button")
 const rightButton = document.getElementById("news-right-button")
+const hero = document.getElementById("hero")
+const headerMenuIcon = document.getElementById("header-menu-icon")
+const headerNav = document.getElementById("header-nav")
 
 
 
+let headerPosition = "top"
+let navigationOpen = false
 
 
 function init(){
-    console.log("initialize")
+    headerNavDisplay(headerPosition, navigationOpen)
     sectionActualites.innerHTML = carrousel(events)
+
 }
 
 init()
 
-
-
-console.log(events)
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 1000){
-        header.style.backgroundColor = colors.lightblue
-        headerLogo.style.marginLeft = "120px"
-        header.style.height = "120px"
+headerMenuIcon.addEventListener("click", () => {
+    
+    navigationOpen = !navigationOpen
+    console.log(navigationOpen)
+    if (window.scrollY > hero.offsetHeight){
+        headerPosition = "body"
     }else{
-        header.style.backgroundColor = "transparent"
-        header.style.height = "160px"
-        headerLogo.style.marginLeft = "-160px"
+        headerPosition = "top"
     }
+    headerNavDisplay(headerPosition, navigationOpen)
 })
 
+headerLogo.addEventListener("click", () => {
+    navigationOpen = false
+    headerNavDisplay("top", navigationOpen)
+})
+
+window.addEventListener("scroll", () => {
+    let headerPosition = ""
+    if (window.scrollY > hero.offsetHeight){
+        headerPosition = "body"
+    }else{
+        headerPosition = "top"
+    }
+
+    console.log(headerPosition)
+    headerNavDisplay(headerPosition, navigationOpen)
+})
+
+headerNav.addEventListener("click", () => {
+    navigationOpen = !navigationOpen
+
+    if (window.scrollY > hero.offsetHeight){
+        headerPosition = "body"
+    }else{
+        headerPosition = "top"
+    }
+
+    headerNavDisplay(headerPosition, navigationOpen)
+})
+
+
+
+function headerNavDisplay(headerPosition, navigationOpen){
+
+    if (headerPosition === "top" && navigationOpen==false){
+        header.setAttribute("id", "transparent-header")
+    }
+
+    if (headerPosition === "body"){
+        header.setAttribute("id", "blue-header")
+    }
+
+    if (navigationOpen){
+        header.setAttribute("id", "blue-header")
+        headerNav.removeAttribute("class", "header-nav-no-display")
+    }else{
+        headerNav.setAttribute("class", "header-nav-no-display" )
+    }
+}
 
 
 leftButton.onclick = () => {
