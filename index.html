@@ -48,30 +48,85 @@
         
         <div >
             <section id="actualites">
-                <button id="news-left-button">left</button>
-                <button id="news-right-button">right</button>
+                <i id="news-left-button" class="fa-solid fa-chevron-left"></i>
+                <i id="news-right-button" class="fa-solid fa-chevron-right"></i>
+                <div id="text-container"></div>
                 <h2>Actualités</h2>
                 <div id="section-actualites"></div>
             </section>
         </div>
-        <div id="lecomplexe">
-            <section>
+        <div>
+            <section id="lecomplexe">
                 <h2>Le complexe</h2>
+                <h3>100% Padel</h3>
+                <div id="card-container">
+                    <div class="complexe-card">
+                        <img src="./images/ALLINPADEL-picto-padel-480x480-1.png" width="100px">
+                        <p>3 pistes de Palel en 2 vs 2</p>
+                    </div>
+                    <div class="complexe-card">
+                        <img src="./images/ALLINPADEL-picto-padel.png" width="100px">
+                        <p>1 piste de Palel en 1 vs 1</p>
+                    </div>
+                    <div class="complexe-card">
+                        <img src="./images/ALLINPADEL-picto-bar_restau.png" width="100px">
+                        <p>Club House</p>
+                    </div>
+                    <div class="complexe-card">
+                        <img src="./images/darts.png" width="100px">
+                        <p>Fléchettes et baby-foot</p>
+                    </div>
+                    <div class="complexe-card">
+                        <img src="./images/television.png" width="100px">
+                        <p>Diffusion de matchs</p>
+                    </div>
+                    <div class="complexe-card">
+                        <img src="./images/ALLINPADEL-picto-balle-480x480-1.png" width="100px">
+                        <p>Cours de Padel</p>
+                    </div>
+                </div>
             </section>
         </div>
-        <div id="lepadel">
-            <section>
+        <div>
+            <section id="lepadel">
                 <h2>Le Padel</h2>
+                <div id="lepadel-content">
+                    <p>Le padel se joue généralement en double sur un court plus petit que celui du tennis, 
+                        entouré de murs et de grillages.</p>
+                     <p>Le jeu est rapide et dynamique et c'est un sport accessible à tous les niveaux.</p>   
+                    <p>Si vous cherchez une activité amusante et compétitive à pratiquer entre amis ou en famille, 
+                        le padel est fait pour vous !</p> 
+                    <video id="video-padel" controls>
+                        <source src="videos/Sport _ découverte du _PADEL_.mp4" type=video/mp4>
+                    </video>
+                </div>
             </section>
         </div>
-        <div id="contact">
-            <section>
+        <div>
+            <section id="contact">
                 <h2>Contact</h2>
+                <form action="traitement-formulaire.php" method="post">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+                    
+                    <label for="email">E-mail :</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <input type="submit" value="Envoyer">
+                  </form>                  
             </section>
         </div>
         <div id="acces">
             <section>
                 <h2>Accés</h2>
+                <p>8 boulevard Gabriel Lippman Gouesnou , accès pour personne a mobilité réduite</p>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.4715254366997!2d-4.458532448600044!3d48.42828933874511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4816ba541b3a9a9d%3A0x2b9e4d08f1ef6f17!2s8%20Bd%20Gabriel%20Lippmann%2C%2029850%20Gouesnou!5e0!3m2!1sfr!2sfr!4v1679683008350!5m2!1sfr!2sfr" 
+                    width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section> 
         </div> 
     </main>

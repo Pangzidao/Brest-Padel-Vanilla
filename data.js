@@ -21,22 +21,28 @@ class Event {
 
 export let events = [
     {
-        "nom" : "tournoi",
+        "nom" : "Tournoi",
         "description" : "Des matchs intenses et une ambiance conviviale : Retour sur le tournoi de padel de notre club",
         "image" : "./images/le-padel-tennis-est-un-sport-tres-spectaculaire-ici-sur-le_5266766_1000x526.jpg",
         "date": "15/09/2023"
     },
     {
-        "nom" : "nouveau coach",
+        "nom" : "Nouveau coach",
         "description" : "Renfort de choix pour notre club de padel : Présentation de notre nouveau coach !",
         "image" : "./images/Coach_&_trainer.jpg",
         "date": "8/08/2023"
     },
     {
-        "nom" : "championnat de France",
+        "nom" : "Championnat de France",
         "description" : "Victoire de notre joueuse au championnat de France",
         "image" : "./images/JUGADORA_DE_PADEL.jpg",
         "date": "18/07/2023"
+    },
+    {
+        "nom" : "Nouveau coach",
+        "description" : "Renfort de choix pour notre club de padel : Présentation de notre nouveau coach !",
+        "image" : "./images/Coach_&_trainer.jpg",
+        "date": "8/08/2023"
     }
 ]
 

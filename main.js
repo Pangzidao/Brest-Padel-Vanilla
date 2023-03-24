@@ -17,26 +17,34 @@ const headerNav = document.getElementById("header-nav")
 
 let headerPosition = "top"
 let navigationOpen = false
+let mobileWidth
+
 
 
 function init(){
     headerNavDisplay(headerPosition, navigationOpen)
+    mobileWidth = window.matchMedia("(max-width: 760px)")
     sectionActualites.innerHTML = carrousel(events)
-
+    console.log(mobileWidth.matches)
 }
 
 init()
 
-headerMenuIcon.addEventListener("click", () => {
-    
-    navigationOpen = !navigationOpen
-    console.log(navigationOpen)
-    if (window.scrollY > hero.offsetHeight){
+function headerPos(){
+    let headerPosition = ""
+    if (window.scrollY > hero.offsetHeight - 400){
         headerPosition = "body"
     }else{
         headerPosition = "top"
     }
-    headerNavDisplay(headerPosition, navigationOpen)
+    return headerPosition
+}
+
+
+headerMenuIcon.addEventListener("click", () => {
+    
+    navigationOpen = !navigationOpen
+    headerNavDisplay(headerPos(), navigationOpen)
 })
 
 headerLogo.addEventListener("click", () => {
@@ -45,15 +53,7 @@ headerLogo.addEventListener("click", () => {
 })
 
 window.addEventListener("scroll", () => {
-    let headerPosition = ""
-    if (window.scrollY > hero.offsetHeight){
-        headerPosition = "body"
-    }else{
-        headerPosition = "top"
-    }
-
-    console.log(headerPosition)
-    headerNavDisplay(headerPosition, navigationOpen)
+    headerNavDisplay(headerPos(), navigationOpen)
 })
 
 headerNav.addEventListener("click", () => {
@@ -105,38 +105,27 @@ rightButton.onclick = () => {
     sectionActualites.innerHTML = carrousel(events)
 }
 
+
+console.log(mobileWidth)
+
 function carrousel(events){
 
     let html = ""
+    let numberOfCards = 0
+    console.log(mobileWidth)
+    mobileWidth.matches? numberOfCards = 1 : numberOfCards = 3
 
-    /*
-    html = `
-        <div class="news">
-            <h3>${events[indexUn].nom}</h3>
-            <p>${events[indexUn].date}</p>
-        </div>
-        <div class="news">
-            <h3>${events[indexDeux].nom}</h3>
-            <p>${events[indexDeux].date}</p>
-        </div>
-        <div class="news">
-            <h3>${events[indexTrois].nom}</h3>
-            <p>${events[indexTrois].date}</p>
-        </div>
-    `
-    */
-
-    let eventsDisplay = events.slice(0,3)
-    console.log(eventsDisplay)
+    let eventsDisplay = events.slice(0,numberOfCards)
     eventsDisplay.forEach((evenement) => {
         html += 
         `
-        <div class="news" style="background-image: url(${evenement.image}); 
-                                background-position:"center"
-                                >
-            <h3>${evenement.nom}</h3>
-            <p>${evenement.description}</p>
-            <p>${evenement.date}</p>
+        <div class="news">
+            <img src="${evenement.image}"/>
+            <div class="news-text">
+                <p>${evenement.date}</p>
+                <h3>${evenement.nom}</h3>
+                <p>${evenement.description}</p>
+            </div>
         </div>
         `
     })
