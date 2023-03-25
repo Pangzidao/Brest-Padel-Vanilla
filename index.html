@@ -19,13 +19,12 @@
                 <li class="header-nav-link"><a href="#lecomplexe">Le complexe</a></li>
                 <li class="header-nav-link"><a href="#lepadel">Le padel</a></li>
                 <li class="header-nav-link"><a href="#contact">Contact</a></li>
-                <li class="header-nav-link"><a href="#acces">Accés</a></li>                      
             </ul>
         </nav>
         
     </header>
     <main>
-        <button id = "booking-button" type="button">Je réserve</button>
+        <a id = "booking-button" href="https://lemas.gestion-sports.com/connexion.php?">Je réserve</a>
         <section id="hero">
             <img src="./images/new-logo-brest-padel.png" width="300px">
         </section>
@@ -104,35 +103,43 @@
         </div>
         <div>
             <section id="contact">
-                <h2>Contact</h2>
-                <form action="traitement-formulaire.php" method="post">
-                    <label for="nom">Nom :</label>
-                    <input type="text" id="nom" name="nom" required>
-                    
-                    <label for="email">E-mail :</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" required></textarea>
-                    
-                    <input type="submit" value="Envoyer">
-                  </form>                  
-            </section>
-        </div>
-        <div id="acces">
-            <section>
-                <h2>Accés</h2>
-                <p>8 boulevard Gabriel Lippman Gouesnou , accès pour personne a mobilité réduite</p>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.4715254366997!2d-4.458532448600044!3d48.42828933874511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4816ba541b3a9a9d%3A0x2b9e4d08f1ef6f17!2s8%20Bd%20Gabriel%20Lippmann%2C%2029850%20Gouesnou!5e0!3m2!1sfr!2sfr!4v1679683008350!5m2!1sfr!2sfr" 
-                    width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h2>contact</h2>
+                <div id="contact-container">
+                    <div id="details">
+                        <h3>Brest Padel</h3>
+                        <p>8 boulevard Gabriel Lippman</p>
+                        <p>29850 Gouesnou</p>
+                        <p>02 98 84 45 **</p>
+                        <p>contact@brest-padel.com</p>
+                    </div>
+                    <div id="map-container">
+                        <iframe 
+                            id="map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.4715254366997!2d-4.458532448600044!3d48.42828933874511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4816ba541b3a9a9d%3A0x2b9e4d08f1ef6f17!2s8%20Bd%20Gabriel%20Lippmann%2C%2029850%20Gouesnou!5e0!3m2!1sfr!2sfr!4v1679683008350!5m2!1sfr!2sfr" 
+                            style="border:0;" allowfullscreen="" loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
             </section> 
         </div> 
     </main>
     <footer>
-        <img src="./images/new-logo-brest-padel.png">
-        <a href="admin.html">administrateur</a>
+        <div>
+           <div class="social-media-logo">
+                <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <div class="social-media-logo">
+                <i class="fa-brands fa-instagram"></i>
+            </div> 
+            <div class="social-media-logo">
+                <i class="fa-brands fa-twitter"></i>
+            </div> 
+        </div>
+        <div>
+            <img src="./images/new-logo-brest-padel.png">
+        </div>
+        <div></div>
     </footer>
     <script type="module" src="main.js"></script>
 </body>
