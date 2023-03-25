@@ -476,6 +476,9 @@ html{
                 align-items: center;
                 border-radius: 50%;
                 margin: 2px;
+                &:hover{
+                    cursor: pointer;
+                }
                 i{
                     color: $darkblue;
                     text-align: center;

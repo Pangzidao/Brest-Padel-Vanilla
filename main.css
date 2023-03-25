@@ -426,6 +426,9 @@ html footer div .social-media-logo {
   border-radius: 50%;
   margin: 2px;
 }
+html footer div .social-media-logo:hover {
+  cursor: pointer;
+}
 html footer div .social-media-logo i {
   color: #246c93;
   text-align: center;
